@@ -98,7 +98,11 @@ await mcp.callTool('generate_chart', {
 });
 ```
 
+<<<<<<< HEAD
 ## Step 4: Add Chart Slide
+=======
+## Step 4: Add Chart to Slide
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 
 ```javascript
 await mcp.callTool('create_slide', {
@@ -106,6 +110,7 @@ await mcp.callTool('create_slide', {
   slideType: 'chart',
   content: {
     title: 'Revenue Performance',
+<<<<<<< HEAD
     body: `
 <div class="text-center">
   <img src="/charts/chart_${Date.now()}.png" alt="Revenue Growth Chart" class="mx-auto mb-6" />
@@ -126,10 +131,15 @@ await mcp.callTool('create_slide', {
   </div>
 </div>
     `
+=======
+    chartPath: '/charts/chart_[generated_id].png',
+    caption: 'Strong Q4 performance driven by new market expansion'
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
   }
 });
 ```
 
+<<<<<<< HEAD
 ## Step 5: Add Market Analysis with Interactive Components
 
 ```javascript
@@ -287,6 +297,9 @@ await mcp.callTool('create_slide', {
 ```
 
 ## Step 8: Apply Hatch Corporate Theme
+=======
+## Step 5: Apply Custom Theme
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 
 ```javascript
 await mcp.callTool('apply_theme', {
@@ -295,11 +308,36 @@ await mcp.callTool('apply_theme', {
   customizations: {
     primaryColor: '#00A651',
     secondaryColor: '#004225',
+<<<<<<< HEAD
     fontFamily: 'Inter, sans-serif'
+=======
+    fontFamily: 'Inter',
+    customCSS: `
+      .metric-card {
+        background: rgba(0, 166, 81, 0.1);
+        border: 2px solid #00A651;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      
+      .metric-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #00A651;
+      }
+      
+      .growth-indicator {
+        color: #FFB800;
+        font-weight: bold;
+      }
+    `
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
   }
 });
 ```
 
+<<<<<<< HEAD
 ## Step 9: Export the Presentation
 
 ```javascript
@@ -352,3 +390,83 @@ npm run export  # Export to PDF
 ```
 
 The presentation will be available at `http://localhost:3030` for live editing and preview.
+=======
+## Step 6: Export Presentation
+
+```javascript
+// Export to multiple formats
+await mcp.callTool('export_deck', {
+  deckPath: './presentations/q4-2024-review',
+  outputFormat: 'pdf',
+  exportOptions: {
+    includeNotes: true,
+    quality: 'high'
+  }
+});
+
+await mcp.callTool('export_deck', {
+  deckPath: './presentations/q4-2024-review',
+  outputFormat: 'pptx',
+  exportOptions: {
+    includeAnimations: false,
+    template: 'hatch-corporate'
+  }
+});
+```
+
+## Complete Example Output
+
+The above sequence creates a professional business review presentation with:
+
+### 🎯 **Auto-Generated Starter Slides**
+- **Cover Slide**: Q4 2024 Business Review with Hatch branding
+- **Content Slide**: Executive summary with key achievements and strategic priorities
+- **Closing Slide**: Thank you slide with contact information
+
+### 📊 **Data Visualization**
+- Revenue growth chart with Hatch color scheme
+- Custom styling for metrics and KPIs
+- Interactive components for engagement
+
+### 🎨 **Professional Styling**
+- Hatch corporate theme with brand colors
+- Custom CSS for enhanced visuals
+- Consistent typography and spacing
+
+### 📁 **File Structure**
+```
+q4-2024-review/
+├── slides.md                 # Main presentation file
+├── public/
+│   └── charts/
+│       ├── chart_[id].png    # Generated revenue chart
+│       └── chart_[id].svg    # Vector version
+├── python/
+│   └── generate_chart.py     # Chart generation script
+├── style.css                 # Custom theme styles
+└── package.json              # Slidev configuration
+```
+
+### 🚀 **Usage**
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Export to PDF
+npm run export
+```
+
+## Key Features Demonstrated
+
+1. **Auto-Generated Starter Slides**: Professional 3-slide foundation
+2. **Modular Slide Creation**: Individual .md files for collaboration
+3. **Data Visualization**: Python-powered chart generation
+4. **Custom Theming**: Hatch brand integration
+5. **Export Flexibility**: Multiple output formats
+6. **Interactive Components**: Enhanced presentation experience
+
+This example shows how the Slidev Builder MCP enables rapid creation of professional presentations with minimal setup while maintaining full customization capabilities.
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

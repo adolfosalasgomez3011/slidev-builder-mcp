@@ -86,4 +86,8 @@ layout: center
   <img src="https://www.hatch.com/themes/custom/hatch_theme/logo.svg" class="h-20 mx-auto mb-4" />
   <p class="text-lg">Hatch Advisory</p>
   <p class="text-sm opacity-75">Engineering a better world</p>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

@@ -11,6 +11,7 @@ import { createSlide, CreateSlideArgs } from './tools/createSlide.js';
 import { generateChart, GenerateChartArgs } from './tools/generateChart.js';
 import { applyTheme, ApplyThemeArgs } from './tools/applyTheme.js';
 import { exportDeck, ExportDeckArgs } from './tools/exportDeck.js';
+<<<<<<< HEAD
 import { createComponent, CreateComponentArgs } from './tools/createComponent.js';
 import { listComponents, ListComponentsArgs } from './tools/listComponents.js';
 import { addComponent, AddComponentArgs } from './tools/addComponent.js';
@@ -22,6 +23,13 @@ import { publishComponent, PublishComponentArgs } from './tools/publishComponent
  * A comprehensive Model Context Protocol server for creating, customizing, and managing
  * Slidev presentations with advanced theming, interactive components, component library,
  * and Python integration.
+=======
+
+/**
+ * Slidev Builder MCP Server
+ * A comprehensive Model Context Protocol server for creating, customizing, and managing
+ * Slidev presentations with advanced theming, interactive components, and Python integration.
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
  */
 
 class SlidevBuilderServer {
@@ -230,6 +238,7 @@ class SlidevBuilderServer {
               required: ['deckPath', 'format', 'outputPath'],
             },
           },
+<<<<<<< HEAD
           {
             name: 'create_component',
             description: 'Create a new reusable component for presentations with Vue.js implementation',
@@ -438,6 +447,8 @@ class SlidevBuilderServer {
               required: ['componentId', 'componentPath', 'targetScope'],
             },
           },
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
         ] as Tool[],
       };
     });
@@ -462,6 +473,7 @@ class SlidevBuilderServer {
           case 'export_deck':
             return await exportDeck(args as unknown as ExportDeckArgs);
 
+<<<<<<< HEAD
           case 'create_component':
             return await createComponent(args as unknown as CreateComponentArgs);
 
@@ -477,6 +489,8 @@ class SlidevBuilderServer {
           case 'publish_component':
             return await publishComponent(args as unknown as PublishComponentArgs);
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
           default:
             throw new Error(`Unknown tool: ${name}`);
         }
@@ -514,4 +528,8 @@ class SlidevBuilderServer {
 }
 
 const server = new SlidevBuilderServer();
+<<<<<<< HEAD
 server.run().catch(console.error);
+=======
+server.run().catch(console.error);
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

@@ -6,14 +6,20 @@ class: text-center
 
 # {{title}}
 
+<<<<<<< HEAD
 ## {{subtitle || 'Hatch Advisory'}}
 
 <div class="absolute bottom-10">
   <span class="font-700">
+=======
+<div class="absolute bottom-10">
+  <span class="font-700 text-white">
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
     Hatch Advisory | {{date}}
   </span>
 </div>
 
+<<<<<<< HEAD
 <style>
 h1 {
   color: white;
@@ -34,3 +40,8 @@ h2 {
   font-size: 1rem;
 }
 </style>
+=======
+<div class="absolute top-10 right-10">
+  <img src="https://www.hatch.com/themes/custom/hatch_theme/logo.svg" class="h-16" />
+</div>
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

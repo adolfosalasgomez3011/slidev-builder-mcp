@@ -40,7 +40,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "https://github.com/hatch-ltd/slidev-builder-mcp.git"
+=======
+    "url": "https://github.com/adolfosalasgomez3011/slidev-builder-mcp.git"
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.6.0",
@@ -94,4 +98,8 @@
     },
     "server": "dist/index.js"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

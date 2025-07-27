@@ -1,9 +1,15 @@
 ---
 layout: center
+<<<<<<< HEAD
+=======
+background: '#1E293B'
+class: text-center
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ---
 
 # Thank You
 
+<<<<<<< HEAD
 <div class="text-center space-y-6">
   <div class="text-6xl">🎉</div>
   
@@ -28,3 +34,10 @@ h2 {
   color: #1e293b;
 }
 </style>
+=======
+<div class="text-center text-white">
+  <div class="text-6xl mb-4">🚀</div>
+  <p class="text-xl font-semibold">Questions & Discussion</p>
+  <p class="text-sm opacity-75 mt-4">{{date}}</p>
+</div>
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

@@ -30,13 +30,21 @@ npm install -g @hatch/slidev-builder-mcp
 
 ### Local Development
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/hatch-ltd/slidev-builder-mcp.git
+=======
+git clone https://github.com/adolfosalasgomez3011/slidev-builder-mcp.git
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 cd slidev-builder-mcp
 npm install
 npm run build
 ```
 
+<<<<<<< HEAD
 ## � Complete Documentation
+=======
+## 📚 Complete Documentation
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 
 ### Essential Guides
 - **[📋 Installation Guide](./INSTALLATION-GUIDE.md)** - Complete setup instructions for all platforms and MCP clients
@@ -61,7 +69,11 @@ npm run build
 - **📄 Multiple Export Formats** - PDF, HTML, PowerPoint, and standalone web applications
 - **🛠️ Type-Safe Development** - Full TypeScript support with comprehensive type definitions
 
+<<<<<<< HEAD
 ## �🔧 Configuration
+=======
+## 🔧 Configuration
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 
 ### MCP Client Setup
 Add to your MCP client configuration:
@@ -334,7 +346,11 @@ await fetchAssets({
 ### Local Setup
 ```bash
 # Clone repository
+<<<<<<< HEAD
 git clone https://github.com/hatch-ltd/slidev-builder-mcp.git
+=======
+git clone https://github.com/adolfosalasgomez3011/slidev-builder-mcp.git
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 cd slidev-builder-mcp
 
 # Install dependencies
@@ -416,4 +432,8 @@ Hatch is a global engineering and consulting company that delivers innovative so
 
 ---
 
+<<<<<<< HEAD
 For support, contact the Hatch Digital Innovation team or open an issue on GitHub.
+=======
+For support, contact the Hatch Digital Innovation team or open an issue on GitHub.
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Quick Start Guide - Slidev Builder MCP
 
 Get up and running with the Slidev Builder MCP in under 5 minutes!
@@ -48,10 +49,54 @@ await mcp.callTool('create_slide', {
       - Interactive components
       - Python chart integration
     `
+=======
+# Slidev Builder MCP - Quick Start
+
+## 🚀 5-Minute Setup
+
+### Step 1: Install
+```bash
+npm install -g @hatch/slidev-builder-mcp
+```
+
+### Step 2: Configure Claude Desktop
+Add to `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "slidev-builder": {
+      "command": "slidev-builder-mcp",
+      "args": []
+    }
+  }
+}
+```
+
+### Step 3: Create Your First Presentation
+```javascript
+// Ask Claude: "Create a business presentation about Q4 results"
+await mcp.callTool('create_deck', {
+  title: 'Q4 Business Review',
+  outputPath: './my-presentation',
+  theme: 'hatch-corporate'
+});
+```
+
+### Step 4: Add Content
+```javascript
+// Add slides with content
+await mcp.callTool('create_slide', {
+  deckPath: './my-presentation',
+  slideType: 'content',
+  content: {
+    title: 'Executive Summary',
+    body: '- Revenue up 15%\n- Cost optimization achieved\n- Market expansion successful'
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
   }
 });
 ```
 
+<<<<<<< HEAD
 ### 3. Generate a Chart (30 seconds)
 
 ```javascript
@@ -348,3 +393,24 @@ plt.savefig('output.png')
 - 📧 [Contact Support](mailto:support@yourorg.com)
 
 Happy presenting! 🎉
+=======
+### Step 5: Export
+```javascript
+// Export to PDF
+await mcp.callTool('export_deck', {
+  deckPath: './my-presentation',
+  format: 'pdf',
+  outputPath: './presentation.pdf'
+});
+```
+
+## 🎉 You're Done!
+
+Your professional presentation is ready with:
+- ✅ Auto-generated starter slides
+- ✅ Hatch corporate branding
+- ✅ Professional layouts
+- ✅ Export to PDF/PowerPoint
+
+See [API Documentation](./API-DOCUMENTATION.md) for advanced features.
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

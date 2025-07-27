@@ -94,6 +94,7 @@ Adds a new slide to an existing presentation.
 }
 ```
 
+<<<<<<< HEAD
 #### Slide Types
 
 ##### Title Slide
@@ -397,6 +398,8 @@ await mcp.callTool('export_deck', {
 });
 ```
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ---
 
 ## 🎨 Theme System
@@ -409,6 +412,7 @@ await mcp.callTool('export_deck', {
 - **Accent Color**: #FFB800 (Gold)
 - **Use Case**: Client presentations, board meetings, executive summaries
 
+<<<<<<< HEAD
 #### Hatch Executive
 - **Primary Color**: #1E293B (Dark Blue)
 - **Secondary Color**: #475569 (Slate)
@@ -454,10 +458,13 @@ const customTheme = {
 };
 ```
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ---
 
 ## 🔧 Advanced Features
 
+<<<<<<< HEAD
 ### Python Integration
 
 When `pythonIntegration: true` is enabled, each deck includes:
@@ -754,3 +761,22 @@ process.env.SLIDEV_DEBUG = 'true';
 ---
 
 *This documentation covers all available tools and features in the Slidev Builder MCP. For the latest updates, see the [GitHub repository](https://github.com/hatch-ltd/slidev-builder-mcp).*
+=======
+### Auto-Generated Starter Slides
+Every presentation automatically includes 3 professional starter slides:
+
+1. **Cover Slide** - Theme-specific title slide with branding
+2. **Content Slide** - Template slide ready for customization
+3. **Closing Slide** - Professional thank you slide
+
+### Modular Slide Architecture
+Slides are created as individual `.md` files for:
+- Better collaboration
+- Version control
+- Selective editing
+- Easier maintenance
+
+---
+
+*For complete documentation, examples, and troubleshooting, see the full API reference.*
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 # Slidev Builder MCP - Installation & Setup Guide
+=======
+# Slidev Builder MCP - Installation Guide
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 
 ## 📋 Prerequisites
 
 ### System Requirements
 - **Node.js**: Version 18.0.0 or higher
+<<<<<<< HEAD
 - **npm**: Version 8.0.0 or higher (comes with Node.js)
 - **Python**: Version 3.8+ (for chart generation features)
 - **Git**: For version control and cloning repositories
@@ -17,17 +22,31 @@ git --version     # Any recent version
 ```
 
 ---
+=======
+- **NPM**: Version 8.0.0 or higher
+- **TypeScript**: Version 5.0.0 or higher (for development)
+- **Git**: For version control and collaboration
+
+### Optional Dependencies
+- **Python**: Version 3.8+ (for chart generation)
+- **Chromium**: For PDF export (installed automatically with Slidev)
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 
 ## 🚀 Installation Methods
 
 ### Method 1: Global NPM Installation (Recommended)
 
 ```bash
+<<<<<<< HEAD
 # Install globally for system-wide access
+=======
+# Install globally
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 npm install -g @hatch/slidev-builder-mcp
 
 # Verify installation
 slidev-builder-mcp --version
+<<<<<<< HEAD
 
 # Test basic functionality
 slidev-builder-mcp --help
@@ -53,6 +72,15 @@ npx slidev-builder-mcp --help
 ```bash
 # Clone the repository
 git clone https://github.com/hatch-ltd/slidev-builder-mcp.git
+=======
+```
+
+### Method 2: Local Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/adolfosalasgomez3011/slidev-builder-mcp.git
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 cd slidev-builder-mcp
 
 # Install dependencies
@@ -61,6 +89,7 @@ npm install
 # Build the project
 npm run build
 
+<<<<<<< HEAD
 # Link for global development use
 npm link
 
@@ -92,6 +121,25 @@ slidev-builder-mcp --version
 ```
 
 3. **For Local Installation**
+=======
+# Test the installation
+npm test
+```
+
+### Method 3: NPX (No Installation)
+
+```bash
+# Run directly with NPX
+npx @hatch/slidev-builder-mcp
+```
+
+## 🔧 MCP Client Configuration
+
+### Claude Desktop
+
+Add to your `claude_desktop_config.json`:
+
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ```json
 {
   "mcpServers": {
@@ -103,6 +151,7 @@ slidev-builder-mcp --version
 }
 ```
 
+<<<<<<< HEAD
 4. **Restart Claude Desktop**
    - Close Claude Desktop completely
    - Restart the application
@@ -119,6 +168,15 @@ code --install-extension modelcontextprotocol.mcp
 ```json
 {
   "mcp.servers": {
+=======
+### VS Code with MCP Extension
+
+Add to your MCP configuration:
+
+```json
+{
+  "mcpServers": {
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
     "slidev-builder": {
       "command": "slidev-builder-mcp",
       "args": []
@@ -127,6 +185,7 @@ code --install-extension modelcontextprotocol.mcp
 }
 ```
 
+<<<<<<< HEAD
 ### Generic MCP Client Configuration
 
 For other MCP clients, use this standard configuration:
@@ -168,10 +227,45 @@ pip install matplotlib plotly pandas numpy seaborn jupyter
 python -c "import matplotlib; print('✓ matplotlib')"
 python -c "import plotly; print('✓ plotly')"
 python -c "import pandas; print('✓ pandas')"
+=======
+### Custom MCP Client
+
+```typescript
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
+
+const transport = new StdioClientTransport({
+  command: 'slidev-builder-mcp',
+  args: []
+});
+
+const client = new Client({
+  name: 'slidev-client',
+  version: '1.0.0'
+}, {
+  capabilities: {}
+});
+
+await client.connect(transport);
+```
+
+## 🐍 Python Integration Setup (Optional)
+
+### Install Python Dependencies
+
+```bash
+# Create virtual environment
+python -m venv slidev-env
+source slidev-env/bin/activate  # On Windows: slidev-env\Scripts\activate
+
+# Install required packages
+pip install matplotlib plotly pandas numpy seaborn
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ```
 
 ### Configure Python Path
 
+<<<<<<< HEAD
 If using a virtual environment, configure the MCP to use it:
 
 ```json
@@ -543,3 +637,84 @@ npm cache clean --force
 **🎉 Congratulations! Your Slidev Builder MCP is now ready for creating professional presentations.**
 
 For next steps, see the [Quick Start Guide](./QUICKSTART.md) or dive into the [Complete API Documentation](./API-DOCUMENTATION.md).
+=======
+```bash
+# Set environment variable
+export SLIDEV_PYTHON_PATH="/path/to/your/python"
+
+# Or in Windows
+set SLIDEV_PYTHON_PATH="C:\\path\\to\\your\\python.exe"
+```
+
+## ✅ Verification
+
+### Test Basic Functionality
+
+```bash
+# Create a test presentation
+mkdir test-presentation
+cd test-presentation
+
+# Initialize with MCP (if using Claude Desktop)
+# Or use the API directly
+```
+
+### Test with MCP Client
+
+```javascript
+// Test the create_deck tool
+const result = await mcp.callTool('create_deck', {
+  title: 'Test Presentation',
+  outputPath: './test-deck',
+  theme: 'default'
+});
+
+console.log(result);
+```
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### Node.js Version Error
+```bash
+# Check Node.js version
+node --version
+
+# Update Node.js if needed
+npm install -g n
+n latest
+```
+
+#### Permission Errors
+```bash
+# Fix NPM permissions (Linux/Mac)
+sudo chown -R $(whoami) ~/.npm
+
+# Or use NPM prefix
+npm config set prefix ~/.npm-global
+export PATH=~/.npm-global/bin:$PATH
+```
+
+#### Python Path Issues
+```bash
+# Find Python path
+which python3
+# or
+where python
+
+# Set in environment
+export SLIDEV_PYTHON_PATH="$(which python3)"
+```
+
+### Support
+
+For installation issues:
+1. Check the [Troubleshooting Guide](./TROUBLESHOOTING.md)
+2. Open an issue on [GitHub](https://github.com/adolfosalasgomez3011/slidev-builder-mcp/issues)
+3. Contact the development team
+
+---
+
+🎉 **Installation Complete!** You're ready to create professional presentations with Slidev Builder MCP.
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

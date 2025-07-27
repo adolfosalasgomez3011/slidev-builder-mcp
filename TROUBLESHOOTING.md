@@ -32,6 +32,7 @@ source ~/.bashrc
 npm install -g @hatch/slidev-builder-mcp
 ```
 
+<<<<<<< HEAD
 #### Package Installation Failures
 **Error**: `Failed to install dependencies`
 ```bash
@@ -48,14 +49,21 @@ npm install --registry https://registry.npmjs.org/
 
 ---
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ### MCP Configuration Issues
 
 #### MCP Server Not Detected
 **Error**: `MCP server 'slidev-builder' not found`
 
+<<<<<<< HEAD
 **Solution 1**: Check Claude Desktop Configuration
 ```json
 // Correct configuration in claude_desktop_config.json
+=======
+**Solution**: Check Claude Desktop Configuration
+```json
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 {
   "mcpServers": {
     "slidev-builder": {
@@ -66,6 +74,7 @@ npm install --registry https://registry.npmjs.org/
 }
 ```
 
+<<<<<<< HEAD
 **Solution 2**: Verify Installation Path
 ```bash
 # Check if command exists
@@ -123,12 +132,18 @@ cat ~/.slidev-builder/logs/error.log
 
 ---
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ### Python Integration Issues
 
 #### Python Not Found
 **Error**: `Python executable not found`
 
+<<<<<<< HEAD
 **Solution 1**: Install Python
+=======
+**Solution**: Install Python
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ```bash
 # Windows - Download from python.org
 # macOS
@@ -142,6 +157,7 @@ sudo apt install python3 python3-pip
 python3 --version
 ```
 
+<<<<<<< HEAD
 **Solution 2**: Configure Python Path
 ```json
 {
@@ -158,6 +174,8 @@ python3 --version
 }
 ```
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 #### Missing Python Modules
 **Error**: `ModuleNotFoundError: No module named 'matplotlib'`
 
@@ -166,16 +184,20 @@ python3 --version
 # Install required packages
 pip3 install matplotlib plotly pandas numpy seaborn
 
+<<<<<<< HEAD
 # Or install all at once
 pip3 install -r requirements.txt
 
 # For conda users
 conda install matplotlib plotly pandas numpy seaborn
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 # Verify installation
 python3 -c "import matplotlib; print('✓ matplotlib installed')"
 ```
 
+<<<<<<< HEAD
 #### Virtual Environment Issues
 **Error**: `Charts not generating in virtual environment`
 
@@ -209,11 +231,14 @@ which python  # Get path to virtual environment Python
 
 ---
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ### Chart Generation Issues
 
 #### Charts Not Displaying
 **Error**: `Chart file not found or empty`
 
+<<<<<<< HEAD
 **Diagnostic Steps**:
 ```bash
 # Check if Python script executed
@@ -232,6 +257,8 @@ print('Chart saved successfully')
 "
 ```
 
+=======
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 **Common Solutions**:
 1. **Missing display backend**:
 ```python
@@ -241,6 +268,7 @@ matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 ```
 
+<<<<<<< HEAD
 2. **Permission issues**:
 ```bash
 # Check directory permissions
@@ -249,6 +277,9 @@ chmod 755 /path/to/presentation/charts/
 ```
 
 3. **Data format issues**:
+=======
+2. **Data format issues**:
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ```javascript
 // Ensure proper data structure
 await mcp.callTool('generate_chart', {
@@ -260,6 +291,7 @@ await mcp.callTool('generate_chart', {
 });
 ```
 
+<<<<<<< HEAD
 #### Chart Quality Issues
 **Problem**: `Charts appear blurry or low quality`
 
@@ -366,17 +398,38 @@ export PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome
 export NODE_OPTIONS="--max-old-space-size=4096"
 
 # Export with options
+=======
+### Performance Issues
+
+#### Slow Export Times
+**Problem**: PDF export takes too long
+
+**Solutions**:
+1. **Reduce image sizes**:
+```bash
+# Compress images before adding
+magick convert large-image.png -quality 85 -resize 1920x1080> optimized.png
+```
+
+2. **Export specific slides**:
+```javascript
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 await mcp.callTool('export_deck', {
   deckPath: './presentation',
   format: 'pdf',
   outputPath: './output.pdf',
   options: {
+<<<<<<< HEAD
     timeout: 60000,  // Increase timeout
     scale: 1         // Reduce scale if needed
+=======
+    range: "1-10"  // Only export first 10 slides
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
   }
 });
 ```
 
+<<<<<<< HEAD
 #### PowerPoint Export Issues
 **Error**: `PPTX export not working`
 
@@ -723,3 +776,40 @@ cat ~/.config/Claude/claude_desktop_config.json
 ---
 
 **Remember**: Most issues can be resolved by ensuring prerequisites are correctly installed and configured. When in doubt, start with a fresh installation in a clean environment.
+=======
+### Getting Help
+
+#### Enable Debug Mode
+```bash
+# Set debug environment variable
+export SLIDEV_DEBUG=true
+slidev-builder-mcp
+
+# Or for Windows
+set SLIDEV_DEBUG=true
+slidev-builder-mcp
+```
+
+#### Collect System Information
+```bash
+# System info for bug reports
+echo "Node.js: $(node --version)"
+echo "NPM: $(npm --version)"
+echo "Python: $(python3 --version)"
+echo "OS: $(uname -a)"
+echo "MCP Package: $(npm list -g @hatch/slidev-builder-mcp)"
+```
+
+#### Contact Support
+1. **GitHub Issues**: [Report bugs](https://github.com/adolfosalasgomez3011/slidev-builder-mcp/issues)
+2. **Documentation**: Check [API Documentation](./API-DOCUMENTATION.md)
+3. **Community**: Join discussions on GitHub
+
+---
+
+🛟 **Still having issues?** Please open a GitHub issue with:
+- Error message (complete stack trace)
+- System information (Node.js, OS, Python versions)
+- Steps to reproduce
+- Expected vs actual behavior
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

@@ -1,10 +1,16 @@
 ---
 layout: center
+<<<<<<< HEAD
 background: '#F8F9FA'
+=======
+background: '#004225'
+class: text-center
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 ---
 
 # Thank You
 
+<<<<<<< HEAD
 <div class="text-center">
   <img src="https://www.hatch.com/themes/custom/hatch_theme/logo.svg" class="h-20 mx-auto mb-6" />
   
@@ -48,3 +54,15 @@ img {
   filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
 }
 </style>
+=======
+<div class="text-center text-white">
+  <img src="https://www.hatch.com/themes/custom/hatch_theme/logo.svg" class="h-20 mx-auto mb-4 filter brightness-0 invert" />
+  <p class="text-xl font-semibold">Hatch Advisory</p>
+  <p class="text-sm opacity-75">Engineering a better world</p>
+  
+  <div class="mt-8 text-sm">
+    <p>Contact: advisory@hatch.com</p>
+    <p>www.hatch.com</p>
+  </div>
+</div>
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

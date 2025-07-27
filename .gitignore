@@ -49,6 +49,7 @@ temp/
 build/
 out/
 
+<<<<<<< HEAD
 # Test outputs
 test-results/
 junit.xml
@@ -62,3 +63,27 @@ pnpm-lock.yaml
 exports/
 presentations/
 preview/
+=======
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Test files
+*.test.js
+*.test.ts
+test-results/
+
+# Package files
+*.tgz
+*.tar.gz
+>>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
