@@ -1,0 +1,348 @@
+/* Interactive Arrows Component Styles */
+
+.interactive-arrows {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  padding: 20px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.arrow-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.arrows-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.arrow-item {
+  position: absolute;
+  cursor: pointer;
+  transition: all var(--animation-speed, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow-item.interactive:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* Arrow SVG Styles */
+.arrow-svg {
+  display: block;
+  overflow: visible;
+}
+
+.arrow-path {
+  fill: none;
+  stroke-linecap: round;
+  transition: all 0.3s ease;
+}
+
+.arrow-head {
+  transition: all 0.3s ease;
+}
+
+/* Confidence-based styling */
+.confidence-low .arrow-path {
+  stroke: #ef4444;
+  stroke-dasharray: 5, 5;
+}
+
+.confidence-low .arrow-head {
+  fill: #ef4444;
+}
+
+.confidence-medium .arrow-path {
+  stroke: #f59e0b;
+  stroke-dasharray: 10, 2;
+}
+
+.confidence-medium .arrow-head {
+  fill: #f59e0b;
+}
+
+.confidence-high .arrow-path {
+  stroke: #10b981;
+}
+
+.confidence-high .arrow-head {
+  fill: #10b981;
+}
+
+/* Theme variations */
+.theme-hatch-corporate .confidence-high .arrow-path,
+.theme-hatch-corporate .confidence-high .arrow-head {
+  stroke: #0066cc;
+  fill: #0066cc;
+}
+
+.theme-hatch-corporate .confidence-medium .arrow-path,
+.theme-hatch-corporate .confidence-medium .arrow-head {
+  stroke: #ff6b35;
+  fill: #ff6b35;
+}
+
+.theme-hatch-technical .confidence-high .arrow-path,
+.theme-hatch-technical .confidence-high .arrow-head {
+  stroke: #2563eb;
+  fill: #2563eb;
+}
+
+.theme-minimal .arrow-path {
+  stroke: #374151;
+}
+
+.theme-minimal .arrow-head {
+  fill: #374151;
+}
+
+.theme-bold .arrow-path {
+  stroke-width: 6 !important;
+}
+
+/* Confidence indicator */
+.confidence-indicator {
+  transition: all 0.3s ease;
+}
+
+.confidence-low .confidence-indicator {
+  fill: #ef4444;
+}
+
+.confidence-medium .confidence-indicator {
+  fill: #f59e0b;
+}
+
+.confidence-high .confidence-indicator {
+  fill: #10b981;
+}
+
+/* Arrow labels */
+.arrow-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.arrow-text {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.confidence-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #4b5563;
+}
+
+/* Tooltip */
+.arrow-tooltip {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.tooltip-content {
+  background: #1f2937;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  text-align: center;
+}
+
+.tooltip-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.tooltip-confidence {
+  font-size: 12px;
+  color: #d1d5db;
+  margin-bottom: 4px;
+}
+
+.tooltip-description {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.4;
+}
+
+/* Tooltip arrow */
+.tooltip-content::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1f2937;
+}
+
+/* Legend */
+.confidence-legend {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.legend-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-indicator {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.legend-item.confidence-low .legend-indicator {
+  background: #ef4444;
+}
+
+.legend-item.confidence-medium .legend-indicator {
+  background: #f59e0b;
+}
+
+.legend-item.confidence-high .legend-indicator {
+  background: #10b981;
+}
+
+.legend-text {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* Layout-specific styles */
+.layout-radial .arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-hierarchy .arrows-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layout-network .arrows-wrapper {
+  position: relative;
+  height: 400px;
+}
+
+/* Animations */
+.arrow-enter-active,
+.arrow-leave-active {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow-enter-from {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+}
+
+.arrow-leave-to {
+  opacity: 0;
+  transform: scale(0.8) translateY(-20px);
+}
+
+.tooltip-enter-active,
+.tooltip-leave-active {
+  transition: all 0.2s ease;
+}
+
+.tooltip-enter-from,
+.tooltip-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .interactive-arrows {
+    padding: 10px;
+  }
+  
+  .arrow-item {
+    transform: scale(0.8);
+  }
+  
+  .confidence-legend {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .legend-items {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* Accessibility */
+.arrow-item:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-item,
+  .arrow-path,
+  .arrow-head,
+  .confidence-indicator {
+    transition: none;
+  }
+  
+  .arrow-enter-active,
+  .arrow-leave-active,
+  .tooltip-enter-active,
+  .tooltip-leave-active {
+    transition: none;
+  }
+}

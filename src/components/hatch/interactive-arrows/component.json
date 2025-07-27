@@ -1,0 +1,60 @@
+{
+  "id": "hatch/interactive-arrows",
+  "name": "Interactive Decision Arrows",
+  "description": "Dynamic arrow components for showing decision flows and confidence levels with interactive animations",
+  "version": "1.0.0",
+  "category": "interactive",
+  "scope": "hatch",
+  "author": "Hatch Team",
+  "tags": ["decision-making", "arrows", "interactive", "flow", "confidence"],
+  "component": "InteractiveArrows.vue",
+  "styles": "styles.css",
+  "examples": ["basic-example.md", "advanced-example.md"],
+  "parameters": [
+    {
+      "name": "arrows",
+      "type": "array",
+      "required": true,
+      "description": "Array of arrow configurations with text, confidence, and target",
+      "default": []
+    },
+    {
+      "name": "layout",
+      "type": "string",
+      "required": false,
+      "description": "Arrow layout pattern",
+      "default": "flow",
+      "options": ["flow", "radial", "hierarchy", "network"]
+    },
+    {
+      "name": "theme",
+      "type": "string",
+      "required": false,
+      "description": "Visual theme for arrows",
+      "default": "hatch-corporate",
+      "options": ["hatch-corporate", "hatch-technical", "minimal", "bold"]
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable interactive hover and click effects",
+      "default": true
+    },
+    {
+      "name": "animationSpeed",
+      "type": "number",
+      "required": false,
+      "description": "Animation speed in milliseconds",
+      "default": 300
+    }
+  ],
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
+  "usage": {
+    "basic": "Add decision flow arrows with confidence indicators",
+    "advanced": "Create complex decision trees with interactive elements"
+  },
+  "documentation": "This component creates interactive arrow flows perfect for decision matrices, confidence assessments, and strategic direction slides."
+}

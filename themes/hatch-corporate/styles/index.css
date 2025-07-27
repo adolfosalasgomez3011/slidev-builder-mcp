@@ -1,0 +1,436 @@
+/* Hatch Corporate Theme Styles */
+
+/* CSS Variables for Hatch Brand Colors */
+:root {
+  --hatch-primary: #00A651;
+  --hatch-primary-rgb: 0, 166, 81;
+  --hatch-secondary: #004225;
+  --hatch-secondary-rgb: 0, 66, 37;
+  --hatch-accent: #FFB800;
+  --hatch-accent-rgb: 255, 184, 0;
+  --hatch-bg: #FFFFFF;
+  --hatch-bg-rgb: 255, 255, 255;
+  --hatch-text: #333333;
+  --hatch-text-rgb: 51, 51, 51;
+  --hatch-gray-light: #F5F5F5;
+  --hatch-gray: #CCCCCC;
+  --hatch-gray-dark: #666666;
+}
+
+/* Base Slidev Layout Overrides */
+.slidev-layout {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--hatch-text);
+  background-color: var(--hatch-bg);
+  line-height: 1.6;
+}
+
+/* Headings */
+.slidev-layout h1 {
+  color: var(--hatch-primary);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.slidev-layout h2 {
+  color: var(--hatch-secondary);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.slidev-layout h3 {
+  color: var(--hatch-accent);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Cover Layout */
+.slidev-layout.cover {
+  background: linear-gradient(135deg, var(--hatch-primary) 0%, var(--hatch-secondary) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.slidev-layout.cover h1 {
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.slidev-layout.cover h2 {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+/* Section Layout */
+.slidev-layout.section {
+  background: var(--hatch-primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slidev-layout.section h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.slidev-layout.section h2 {
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+/* Default Content Layout */
+.slidev-layout.default {
+  padding: 2rem;
+}
+
+.slidev-layout.default h1 {
+  border-bottom: 3px solid var(--hatch-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Center Layout */
+.slidev-layout.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Two Columns Layout */
+.slidev-layout.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: start;
+}
+
+/* Image Right Layout */
+.slidev-layout.image-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+/* Lists */
+.slidev-layout ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.slidev-layout ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.slidev-layout ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--hatch-primary);
+  border-radius: 50%;
+}
+
+.slidev-layout ol {
+  padding-left: 2rem;
+}
+
+.slidev-layout ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+.slidev-layout a {
+  color: var(--hatch-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.slidev-layout a:hover {
+  border-bottom-color: var(--hatch-primary);
+}
+
+/* Code Blocks */
+.slidev-layout pre {
+  background-color: var(--hatch-gray-light);
+  border: 1px solid var(--hatch-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.slidev-layout code {
+  background-color: var(--hatch-gray-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Tables */
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.slidev-layout table th {
+  background-color: var(--hatch-primary);
+  color: white;
+  padding: 0.8rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.slidev-layout table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--hatch-gray);
+}
+
+.slidev-layout table tr:nth-child(even) {
+  background-color: var(--hatch-gray-light);
+}
+
+/* Blockquotes */
+.slidev-layout blockquote {
+  border-left: 4px solid var(--hatch-accent);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--hatch-gray-dark);
+  background-color: rgba(255, 184, 0, 0.05);
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Buttons and Interactive Elements */
+.hatch-button {
+  background-color: var(--hatch-primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hatch-button:hover {
+  background-color: var(--hatch-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hatch-button.secondary {
+  background-color: var(--hatch-accent);
+  color: var(--hatch-text);
+}
+
+.hatch-button.secondary:hover {
+  background-color: #e6a600;
+}
+
+/* Cards and Containers */
+.hatch-card {
+  background-color: white;
+  border: 1px solid var(--hatch-gray);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.hatch-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.hatch-card.primary {
+  border-left: 4px solid var(--hatch-primary);
+}
+
+.hatch-card.accent {
+  border-left: 4px solid var(--hatch-accent);
+}
+
+/* Grids */
+.hatch-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.hatch-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hatch-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Footer */
+.hatch-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--hatch-secondary);
+  color: white;
+  padding: 0.5rem 2rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hatch-footer .logo {
+  height: 24px;
+}
+
+/* Header */
+.hatch-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--hatch-primary);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Slide Numbers */
+.slidev-layout .slidev-page-number {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  background-color: rgba(0, 166, 81, 0.8);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Chart Containers */
+.chart-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+}
+
+.chart-container h3 {
+  color: var(--hatch-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Progress Bars */
+.hatch-progress {
+  background-color: var(--hatch-gray-light);
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.hatch-progress-bar {
+  background: linear-gradient(90deg, var(--hatch-primary) 0%, var(--hatch-accent) 100%);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.8s ease;
+}
+
+/* Badges */
+.hatch-badge {
+  display: inline-block;
+  background-color: var(--hatch-primary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.2rem;
+}
+
+.hatch-badge.secondary {
+  background-color: var(--hatch-secondary);
+}
+
+.hatch-badge.accent {
+  background-color: var(--hatch-accent);
+  color: var(--hatch-text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slidev-layout.two-cols,
+  .slidev-layout.image-right {
+    grid-template-columns: 1fr;
+  }
+  
+  .hatch-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .hatch-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

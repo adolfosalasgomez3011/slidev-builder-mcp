@@ -1,0 +1,140 @@
+{
+  "components": {
+    "hatch/interactive-arrows": {
+      "version": "1.0.0",
+      "author": "Adolfo Salas",
+      "description": "Interactive consulting arrows with confidence indicators for decision flows",
+      "category": "interactions",
+      "tags": ["consulting", "flow", "decision", "arrows", "interactive"],
+      "parameters": {
+        "from": {
+          "type": "string",
+          "required": true,
+          "description": "Starting point or source"
+        },
+        "to": {
+          "type": "string", 
+          "required": true,
+          "description": "Destination point or target"
+        },
+        "confidence": {
+          "type": "number",
+          "required": false,
+          "default": 0.8,
+          "min": 0,
+          "max": 1,
+          "description": "Confidence level (0.0 to 1.0)"
+        },
+        "style": {
+          "type": "enum",
+          "required": false,
+          "default": "corporate",
+          "options": ["corporate", "minimal", "technical"],
+          "description": "Visual style of the arrow"
+        },
+        "showConfidence": {
+          "type": "boolean",
+          "required": false,
+          "default": true,
+          "description": "Whether to display confidence indicator"
+        }
+      },
+      "dependencies": ["vue-3", "d3"],
+      "created": "2025-07-27T19:21:19.000Z",
+      "examples": ["interactive-arrows-basic.md"],
+      "downloads": 0,
+      "rating": 5.0
+    },
+    "hatch/financial-charts": {
+      "version": "1.0.0",
+      "author": "Hatch Analytics Team", 
+      "description": "Professional financial charts with Hatch branding for revenue, EBITDA, and cash flow",
+      "category": "charts",
+      "tags": ["finance", "data", "visualization", "revenue", "charts"],
+      "parameters": {
+        "data": {
+          "type": "array",
+          "required": true,
+          "description": "Array of financial data points"
+        },
+        "chartType": {
+          "type": "enum",
+          "required": false,
+          "default": "waterfall",
+          "options": ["waterfall", "variance", "trend", "bar", "line"],
+          "description": "Type of financial chart to display"
+        },
+        "currency": {
+          "type": "string",
+          "required": false,
+          "default": "USD",
+          "description": "Currency symbol for formatting"
+        },
+        "showProjections": {
+          "type": "boolean",
+          "required": false,
+          "default": false,
+          "description": "Include future projections in the chart"
+        },
+        "title": {
+          "type": "string",
+          "required": false,
+          "description": "Chart title"
+        }
+      },
+      "dependencies": ["vue-3", "chart.js"],
+      "created": "2025-07-27T19:21:19.000Z",
+      "examples": ["financial-charts-basic.md"],
+      "downloads": 0,
+      "rating": 4.9
+    },
+    "hatch/2x2-matrix": {
+      "version": "1.0.0",
+      "author": "Hatch Strategy Team",
+      "description": "BCG-style 2x2 strategic matrix for portfolio analysis and strategic positioning",
+      "category": "frameworks",
+      "tags": ["strategy", "matrix", "bcg", "portfolio", "analysis"],
+      "parameters": {
+        "xAxis": {
+          "type": "string",
+          "required": true,
+          "description": "Label for X-axis"
+        },
+        "yAxis": {
+          "type": "string",
+          "required": true,
+          "description": "Label for Y-axis"
+        },
+        "items": {
+          "type": "array",
+          "required": true,
+          "description": "Array of items to plot with {name, x, y, category}"
+        },
+        "quadrantLabels": {
+          "type": "array",
+          "required": false,
+          "description": "Labels for each quadrant [topLeft, topRight, bottomLeft, bottomRight]"
+        },
+        "colorScheme": {
+          "type": "enum",
+          "required": false,
+          "default": "hatch",
+          "options": ["hatch", "corporate", "minimal"],
+          "description": "Color scheme for the matrix"
+        }
+      },
+      "dependencies": ["vue-3", "d3"],
+      "created": "2025-07-27T19:21:19.000Z",
+      "examples": ["2x2-matrix-basic.md"],
+      "downloads": 0,
+      "rating": 4.8
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-27T19:21:19.000Z",
+    "totalComponents": 3,
+    "categories": ["interactions", "charts", "frameworks"],
+    "scopes": ["hatch"]
+  }
+}

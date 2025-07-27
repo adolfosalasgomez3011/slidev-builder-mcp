@@ -1,0 +1,47 @@
+{
+  "name": "Executive Summary",
+  "description": "Professional executive presentation template with strategic focus",
+  "theme": "hatch-corporate",
+  "slides": [
+    {
+      "layout": "cover",
+      "title": "Executive Summary",
+      "subtitle": "Strategic Initiative Overview"
+    },
+    {
+      "layout": "default",
+      "title": "Key Highlights",
+      "content": "strategic_overview"
+    },
+    {
+      "layout": "center",
+      "title": "Market Analysis",
+      "content": "market_metrics"
+    },
+    {
+      "layout": "default",
+      "title": "Financial Projections",
+      "content": "financial_summary"
+    },
+    {
+      "layout": "default", 
+      "title": "Recommendations",
+      "content": "strategic_recommendations"
+    },
+    {
+      "layout": "end",
+      "title": "Questions & Discussion"
+    }
+  ],
+  "components": [
+    "strategic_framework",
+    "financial_charts",
+    "recommendation_timeline"
+  ],
+  "styling": {
+    "primaryColor": "#00A651",
+    "secondaryColor": "#004225",
+    "accentColor": "#FFB800",
+    "fontFamily": "Inter, sans-serif"
+  }
+}

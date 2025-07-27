@@ -1,0 +1,55 @@
+{
+  "name": "Technical Review",
+  "description": "Detailed technical presentation template for engineering reviews",
+  "theme": "hatch-technical",
+  "slides": [
+    {
+      "layout": "cover",
+      "title": "Technical Review",
+      "subtitle": "System Architecture & Implementation"
+    },
+    {
+      "layout": "default",
+      "title": "System Overview",
+      "content": "architecture_diagram"
+    },
+    {
+      "layout": "default",
+      "title": "Technical Architecture",
+      "content": "component_breakdown"
+    },
+    {
+      "layout": "center",
+      "title": "Performance Metrics",
+      "content": "performance_dashboard"
+    },
+    {
+      "layout": "default",
+      "title": "Implementation Details",
+      "content": "code_examples"
+    },
+    {
+      "layout": "default",
+      "title": "Testing & Validation",
+      "content": "test_results"
+    },
+    {
+      "layout": "default",
+      "title": "Next Steps",
+      "content": "development_roadmap"
+    }
+  ],
+  "components": [
+    "architecture_diagrams",
+    "performance_charts",
+    "code_snippets",
+    "interactive_demos"
+  ],
+  "styling": {
+    "primaryColor": "#00A651",
+    "secondaryColor": "#1e293b",
+    "accentColor": "#FFB800",
+    "fontFamily": "Inter, JetBrains Mono",
+    "codeTheme": "github-dark"
+  }
+}

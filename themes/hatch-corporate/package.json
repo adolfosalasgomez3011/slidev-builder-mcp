@@ -1,0 +1,31 @@
+{
+  "name": "hatch-corporate",
+  "displayName": "Hatch Corporate",
+  "author": "Hatch Ltd",
+  "repo": "https://github.com/hatch-ltd/slidev-themes",
+  "description": "Professional corporate presentation theme for Hatch",
+  "version": "1.0.0",
+  "keywords": [
+    "hatch",
+    "corporate", 
+    "professional",
+    "business",
+    "consulting"
+  ],
+  "engines": {
+    "slidev": ">=0.52.0"
+  },
+  "slidev": {
+    "colorSchema": "both",
+    "highlighter": "shiki",
+    "defaults": {
+      "background": "#FFFFFF",
+      "class": "text-gray-800",
+      "fonts": {
+        "sans": "Inter",
+        "serif": "Georgia", 
+        "mono": "Fira Code"
+      }
+    }
+  }
+}
