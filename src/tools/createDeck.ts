@@ -147,7 +147,6 @@ ${slidesContent}`;
   }
 }
 
-<<<<<<< HEAD
 async function createExecutiveSummarySlides(title: string): Promise<string> {
   return `---
 layout: default
@@ -674,8 +673,6 @@ if __name__ == "__main__":
   );
 }
 
-=======
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 /**
  * Create starter slides content based on theme
  */
@@ -763,88 +760,3 @@ This directory contains individual slide files for modular editing.
 
   await fs.writeFile(path.join(slidesDir, 'README.md'), indexContent);
 }
-<<<<<<< HEAD
-=======
-
-async function copyThemeFiles(theme: string, outputPath: string): Promise<void> {
-  const themePath = path.join(__dirname, '..', 'templates', 'styles', theme);
-  const outputThemePath = path.join(outputPath, 'themes', theme);
-  
-  if (await fs.pathExists(themePath)) {
-    await fs.copy(themePath, outputThemePath);
-  }
-}
-
-async function setupPythonIntegration(outputPath: string): Promise<void> {
-  // Create Python directory structure
-  const pythonDir = path.join(outputPath, 'python');
-  await fs.ensureDir(pythonDir);
-  
-  // Create requirements.txt
-  const requirements = `matplotlib==3.7.2
-pandas==2.0.3
-numpy==1.24.3
-seaborn==0.12.2
-plotly==5.15.0
-jupyter==1.0.0`;
-  
-  await fs.writeFile(path.join(pythonDir, 'requirements.txt'), requirements);
-  
-  // Create basic chart generation script
-  const chartScript = `#!/usr/bin/env python3
-"""
-Chart generation utilities for Slidev presentations
-"""
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-from pathlib import Path
-
-class SlidevChartGenerator:
-    def __init__(self, output_dir="./public/charts"):
-        self.output_dir = Path(output_dir)
-        self.output_dir.mkdir(exist_ok=True)
-        
-        # Set Hatch brand colors
-        self.hatch_colors = {
-            'primary': '#00A651',
-            'secondary': '#004225',
-            'accent': '#FFB800'
-        }
-    
-    def generate_bar_chart(self, data, title, filename):
-        """Generate a bar chart with Hatch styling"""
-        fig, ax = plt.subplots(figsize=(10, 6))
-        
-        bars = ax.bar(data['labels'], data['values'], 
-                     color=self.hatch_colors['primary'])
-        
-        ax.set_title(title, fontsize=16, fontweight='bold')
-        ax.set_ylabel('Values')
-        
-        plt.tight_layout()
-        plt.savefig(self.output_dir / f"{filename}.png", dpi=300, bbox_inches='tight')
-        plt.close()
-        
-        return f"/charts/{filename}.png"
-
-if __name__ == "__main__":
-    generator = SlidevChartGenerator()
-    
-    # Example usage
-    sample_data = {
-        'labels': ['Q1', 'Q2', 'Q3', 'Q4'],
-        'values': [100, 120, 140, 160]
-    }
-    
-    chart_path = generator.generate_bar_chart(
-        sample_data, 
-        'Quarterly Revenue Growth', 
-        'revenue_growth'
-    )
-    
-    print(f"Chart generated: {chart_path}")`;
-  
-  await fs.writeFile(path.join(pythonDir, 'chart_generator.py'), chartScript);
-}
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872

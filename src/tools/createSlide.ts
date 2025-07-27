@@ -209,8 +209,4 @@ onMounted(() => {
 }
 </style>
 `.trim();
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
