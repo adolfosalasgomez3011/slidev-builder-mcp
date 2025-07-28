@@ -69,8 +69,8 @@ export async function createDeck(args: CreateDeckArgs) {
       ...templateConfig
     };
 
-    // Create initial slide content using individual slide templates
-    const slidesContent = await createStarterSlides(title, theme);
+    // Create initial slide content using modular slide imports
+    const slidesContent = createModularSlideContent();
 
     // Create the slides.md file
     const fullContent = `---
@@ -759,4 +759,30 @@ This directory contains individual slide files for modular editing.
 `;
 
   await fs.writeFile(path.join(slidesDir, 'README.md'), indexContent);
+}
+
+/**
+ * Create modular slide content with imports to individual slide files
+ */
+function createModularSlideContent(): string {
+  return `<!-- 
+  MODULAR SLIDE ARCHITECTURE
+  This presentation demonstrates the original vision of Slidev Builder MCP v2.0:
+  Each slide is stored in a separate .md file for modular editing
+  
+  Individual slides are located in the /slides/ directory:
+  - slides/001-cover.md     (Cover slide)
+  - slides/002-content.md   (Content slide) 
+  - slides/003-closing.md   (Closing slide)
+-->
+
+<src="./slides/001-cover.md" />
+
+---
+
+<src="./slides/002-content.md" />
+
+---
+
+<src="./slides/003-closing.md" />`;
 }
