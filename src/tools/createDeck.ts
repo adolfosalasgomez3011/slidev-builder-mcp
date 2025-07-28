@@ -40,10 +40,15 @@ export async function createDeck(args: CreateDeckArgs) {
       templateConfig = await fs.readJson(templatePath);
     }
 
-    // Create base frontmatter
+    // Create base frontmatter with first slide configuration
     const frontmatter = {
       theme: theme,
-      background: '#ffffff',
+      title: title,
+      subtitle: 'Created with Slidev Builder MCP v2.0',
+      author: 'Slidev Builder MCP',
+      date: new Date().toLocaleDateString(),
+      layout: 'cover',
+      background: '#0066cc',
       class: 'text-center',
       highlighter: 'shiki',
       lineNumbers: false,
@@ -55,9 +60,8 @@ export async function createDeck(args: CreateDeckArgs) {
         syncAll: true
       },
       transition: 'slide-left',
-      title: title,
       mdc: true,
-      colorSchema: 'auto',
+      colorSchema: 'light',
       routerMode: 'history',
       aspectRatio: '16/9',
       canvasWidth: 1280,
@@ -66,6 +70,7 @@ export async function createDeck(args: CreateDeckArgs) {
         serif: ['ui-serif', 'Georgia'],
         mono: ['Fira Code', 'ui-monospace']
       },
+      css: './styles/hatch-corporate.css',
       ...templateConfig
     };
 
@@ -793,16 +798,19 @@ async function createModularSlideContent(title: string, theme: string, outputPat
     if (await fs.pathExists(slidePath)) {
       let slideContent = await fs.readFile(slidePath, 'utf-8');
       
-      // Remove the frontmatter from individual slides (except the first one)
-      if (i > 0) {
-        slideContent = slideContent.replace(/^---[\s\S]*?---\n/, '---\n');
+      // For the first slide, remove the frontmatter completely
+      if (i === 0) {
+        slideContent = slideContent.replace(/^---[\s\S]*?---\n/, '');
+      } else {
+        // For subsequent slides, keep the frontmatter but add slide separator
+        combinedContent += `\n<!-- Slide ${i + 1}: ${slideFile.replace(/^\d+-/, '').replace('.md', '')} (from slides/${slideFile}) -->\n`;
+        slideContent = slideContent.replace(/^---/, '---');
       }
       
-      combinedContent += `<!-- Slide ${i + 1}: ${slideFile.replace(/^\d+-/, '').replace('.md', '')} (from slides/${slideFile}) -->\n`;
       combinedContent += slideContent;
       
       if (i < slideFiles.length - 1) {
-        combinedContent += '\n\n';
+        combinedContent += '\n';
       }
     }
   }
