@@ -70,7 +70,7 @@ export async function createDeck(args: CreateDeckArgs) {
     };
 
     // Create initial slide content using modular slide imports
-    const slidesContent = createModularSlideContent();
+    const slidesContent = await createModularSlideContent(title, theme, outputPath);
 
     // Create the slides.md file
     const fullContent = `---
@@ -81,12 +81,7 @@ ${slidesContent}`;
     const slidesPath = path.join(outputPath, 'slides.md');
     await fs.writeFile(slidesPath, fullContent);
 
-    // Create individual slides directory for modular editing
-    const slidesDir = path.join(outputPath, 'slides');
-    await fs.ensureDir(slidesDir);
-    
-    // Create individual slide files
-    await createIndividualSlideFiles(title, theme, slidesDir);
+    // Individual slide files are created within createModularSlideContent function
 
     // Create package.json
     const packageJson = {
@@ -762,10 +757,20 @@ This directory contains individual slide files for modular editing.
 }
 
 /**
- * Create modular slide content with imports to individual slide files
+ * Create modular slide content by reading individual slide files and combining them
  */
-function createModularSlideContent(): string {
-  return `<!-- 
+async function createModularSlideContent(title: string, theme: string, outputPath: string): Promise<string> {
+  const slidesDir = path.join(outputPath, 'slides');
+  await fs.ensureDir(slidesDir);
+  
+  const currentDate = new Date().toLocaleDateString();
+  
+  // Create individual slide files first
+  await createIndividualSlideFiles(title, theme, slidesDir);
+  
+  // Read the content from individual slide files and combine them
+  const slideFiles = ['001-cover.md', '002-content.md', '003-closing.md'];
+  let combinedContent = `<!-- 
   MODULAR SLIDE ARCHITECTURE
   This presentation demonstrates the original vision of Slidev Builder MCP v2.0:
   Each slide is stored in a separate .md file for modular editing
@@ -774,15 +779,33 @@ function createModularSlideContent(): string {
   - slides/001-cover.md     (Cover slide)
   - slides/002-content.md   (Content slide) 
   - slides/003-closing.md   (Closing slide)
+  
+  Note: Slidev requires content to be in the main file, but individual files
+  are maintained for modular editing and can be copied here when needed.
 -->
 
-<src="./slides/001-cover.md" />
+`;
 
----
-
-<src="./slides/002-content.md" />
-
----
-
-<src="./slides/003-closing.md" />`;
+  for (let i = 0; i < slideFiles.length; i++) {
+    const slideFile = slideFiles[i];
+    const slidePath = path.join(slidesDir, slideFile);
+    
+    if (await fs.pathExists(slidePath)) {
+      let slideContent = await fs.readFile(slidePath, 'utf-8');
+      
+      // Remove the frontmatter from individual slides (except the first one)
+      if (i > 0) {
+        slideContent = slideContent.replace(/^---[\s\S]*?---\n/, '---\n');
+      }
+      
+      combinedContent += `<!-- Slide ${i + 1}: ${slideFile.replace(/^\d+-/, '').replace('.md', '')} (from slides/${slideFile}) -->\n`;
+      combinedContent += slideContent;
+      
+      if (i < slideFiles.length - 1) {
+        combinedContent += '\n\n';
+      }
+    }
+  }
+  
+  return combinedContent;
 }
