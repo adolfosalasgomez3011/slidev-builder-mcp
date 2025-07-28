@@ -1,1 +1,127 @@
-{"name":"@hatch/slidev-builder-mcp","version":"2.0.0","description":"A comprehensive MCP server for creating Slidev presentations with component library","type":"module","main":"dist/index.js","bin":{"slidev-builder-mcp":"dist/bin.js"},"scripts":{"build":"tsc","start":"node dist/index.js"},"dependencies":{"@modelcontextprotocol/sdk":"^0.6.0"},"devDependencies":{"typescript":"^5.3.0","@types/node":"^20.10.0"}}
+{
+  "name": "@hatch/slidev-builder-mcp",
+  "version": "2.0.0",
+  "description": "A comprehensive MCP server for creating Slidev presentations with component library, interactive elements, and team collaboration features",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "slidev-builder-mcp": "dist/bin.js"
+  },
+  "files": [
+    "dist/",
+    "templates/",
+    "themes/",
+    "src/components/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepare": "npm run build",
+    "lint": "eslint src/",
+    "test": "vitest",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "slidev", 
+    "presentations",
+    "slides",
+    "automation",
+    "vue",
+    "markdown",
+    "interactive",
+    "charts",
+    "templates",
+    "hatch",
+    "component-library",
+    "collaboration"
+  ],
+  "author": "Hatch Ltd",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adolfosalasgomez3011/slidev-builder-mcp.git"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "@slidev/cli": "^52.1.0",
+    "@slidev/types": "^52.1.0",
+    "vue": "^3.4.0",
+    "vue-chartjs": "^5.3.0",
+    "chart.js": "^4.4.0",
+    "yaml": "^2.3.0",
+    "fs-extra": "^11.2.0",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.0",
+    "handlebars": "^4.7.0",
+    "globby": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/handlebars": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "mcp": {
+    "description": "Slidev Builder MCP v2.0 with Component Library",
+    "version": "2.0.0",
+    "tools": [
+      "create_deck",
+      "create_slide", 
+      "generate_chart",
+      "apply_theme",
+      "export_deck",
+      "create_component",
+      "list_components",
+      "add_component",
+      "install_component",
+      "publish_component"
+    ],
+    "capabilities": [
+      "slide_creation",
+      "theme_management",
+      "chart_generation",
+      "component_library",
+      "team_collaboration"
+    ],
+    "config": {
+      "workspace": "SLIDEV_WORKSPACE",
+      "components": "COMPONENT_LIBRARY_PATH",
+      "brand_config": "HATCH_BRAND_CONFIG",
+      "themes": [
+        "hatch-corporate",
+        "hatch-technical", 
+        "hatch-minimal"
+      ],
+      "component_categories": [
+        "charts", 
+        "diagrams",
+        "interactive",
+        "layout",
+        "data-viz",
+        "frameworks"
+      ],
+      "supported_formats": [
+        "pdf",
+        "html", 
+        "spa",
+        "pptx"
+      ]
+    },
+    "server": "dist/index.js"
+  }
+}
