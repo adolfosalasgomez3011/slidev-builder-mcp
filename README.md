@@ -1,439 +1,192 @@
-# Slidev Builder MCP
+# Slidev Builder MCP v2.1 í»¡ï¸
 
-A powerful Model Context Protocol (MCP) server for automated slide deck creation using the Slidev framework, featuring professional Hatch branding, interactive components, and seamless asset integration.
+## **Never Lose Your Presentation Work Again!**
 
-## ğŸš€ Features
+A revolutionary Model Context Protocol (MCP) server for creating professional Slidev presentations with **built-in Git Guardian protection**. Experience automatic backup, smart recovery, and bulletproof data protection.
 
-### Core Capabilities
-- **ğŸ¯ Automated Slide Creation**: Generate professional presentations with simple prompts
-- **ğŸ¨ Hatch Brand Integration**: Built-in corporate themes and styling
-- **ğŸ“Š Dynamic Charts**: Auto-generate charts from data queries
-- **ğŸ–¼ï¸ Asset Integration**: Fetch icons and images from multiple APIs
-- **âš¡ Interactive Components**: Drag-and-drop arrows, animations, and more
-- **ğŸ“¤ Multi-format Export**: PDF, HTML, and PowerPoint output
-- **ğŸ”„ Live Preview**: Real-time presentation preview server
+## í»¡ï¸ **NEW: Git Guardian Protection System**
 
-### Professional Templates
-- **Corporate**: Professional business presentations
-- **Executive**: C-level summary formats
-- **Technical**: Developer and engineering content
-- **Client**: Customer-facing presentations
-- **Minimal**: Clean, focused layouts
-- **Dashboard**: Data-driven visualizations
+### **Automatic Protection Features**
+- âœ… **Real-time Auto-Backup**: Every edit automatically saved
+- âœ… **Git Integration**: Automatic commits and version history  
+- âœ… **Smart Recovery**: AI-powered restoration suggestions
+- âœ… **File Monitoring**: Instant detection of changes and deletions
+- âœ… **Emergency Restore**: One-click recovery from any backup point
+- âœ… **Zero Configuration**: Protection works automatically
 
-## ğŸ“¦ Installation
-
-### Global Installation
-```bash
-npm install -g @hatch/slidev-builder-mcp
+### **Protection Philosophy**
+```
+OLD WAY: Create â†’ Lose Work â†’ Panic â†’ Try to Recover
+NEW WAY: Create â†’ Auto-Protect â†’ Continue Confidently
 ```
 
-### Local Development
+## íº€ **Core Features**
+
+### **Professional Presentation Creation**
+- í¾¯ **Automated Slide Generation**: Create presentations with simple prompts
+- í¾¨ **Hatch Brand Integration**: Professional corporate themes and styling  
+- í³Š **Dynamic Charts**: Auto-generate interactive visualizations
+- í¶¼ï¸ **Asset Integration**: Fetch icons and images from multiple APIs
+- âš¡ **Interactive Components**: Animations, diagrams, and data visualizations
+- í³¤ **Multi-format Export**: PDF, HTML, PowerPoint, and web applications
+
+### **Advanced Capabilities** 
+- í·© **Component Library**: Reusable presentation elements
+- í±¥ **Team Collaboration**: Share and sync presentations
+- í´„ **Live Preview**: Real-time presentation development
+- í´– **AI-Powered**: Smart content suggestions and optimization
+
+## í³¦ **Installation**
+
+### **Global Installation (Recommended)**
 ```bash
-<<<<<<< HEAD
-git clone https://github.com/hatch-ltd/slidev-builder-mcp.git
-=======
-git clone https://github.com/adolfosalasgomez3011/slidev-builder-mcp.git
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
-cd slidev-builder-mcp
-npm install
-npm run build
+npm install -g @hatch/slidev-builder-mcp-v2
 ```
 
-<<<<<<< HEAD
-## ï¿½ Complete Documentation
-=======
-## ğŸ“š Complete Documentation
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
-
-### Essential Guides
-- **[ğŸ“‹ Installation Guide](./INSTALLATION-GUIDE.md)** - Complete setup instructions for all platforms and MCP clients
-- **[ğŸ“– API Documentation](./API-DOCUMENTATION.md)** - Detailed reference for all tools, parameters, and examples  
-- **[âš¡ Quick Start](./QUICKSTART.md)** - Get up and running with your first presentation in 5 minutes
-- **[ğŸ”§ Troubleshooting](./TROUBLESHOOTING.md)** - Solutions for common issues and debugging guides
-
-### Examples and Testing
-- **[ğŸ’¼ Business Review Example](./examples/business-review-example.md)** - Complete workflow creating a professional business presentation
-- **[ğŸ§ª Starter Slides Test](./STARTER-SLIDES-TEST.md)** - Testing the auto-generated starter slides feature
-- **[âœ… Distribution Checklist](./DISTRIBUTION-CHECKLIST.md)** - Production readiness and publication guide
-
-### Key Features Overview
-- **ğŸ¬ Auto-Generated Starter Slides** - Every deck automatically includes 3 professional starter slides
-- **ğŸ§© Modular Slide Architecture** - Individual `.md` files for each slide enable better collaboration  
-- **ğŸ¨ Professional Templates** - Executive, technical, and business presentation templates
-- **ğŸ“Š Python Chart Integration** - Dynamic data visualizations with matplotlib/plotly and Hatch styling
-- **ğŸ¯ Hatch Corporate Branding** - Authentic professional themes with Hatch colors and styling
-- **âš¡ Interactive Vue Components** - Engaging presentations with modern web components
-- **ğŸ“± Responsive Design** - Mobile-friendly presentations that work on any device
-- **ğŸ”„ Live Preview Server** - Real-time editing with instant preview
-- **ğŸ“„ Multiple Export Formats** - PDF, HTML, PowerPoint, and standalone web applications
-- **ğŸ› ï¸ Type-Safe Development** - Full TypeScript support with comprehensive type definitions
-
-<<<<<<< HEAD
-## ï¿½ğŸ”§ Configuration
-=======
-## ğŸ”§ Configuration
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
-
-### MCP Client Setup
-Add to your MCP client configuration:
+### **MCP Client Configuration**
+Add to your MCP client (Claude Desktop, VS Code, etc.):
 
 ```json
 {
   "mcpServers": {
-    "slidev-builder": {
-      "command": "slidev-builder-mcp",
-      "args": []
-    }
-  }
-}
-```
-
-### Claude Desktop Integration
-Add to `claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "slidev-builder": {
+    "slidev-builder-v2": {
       "command": "npx",
-      "args": ["@hatch/slidev-builder-mcp"]
+      "args": ["-y", "@hatch/slidev-builder-mcp-v2"]
     }
   }
 }
 ```
 
-## ğŸ› ï¸ Available Tools
+## í»¡ï¸ **Protection in Action**
 
-### Core Tools
-
-#### `create_presentation`
-Create a new Slidev presentation with Hatch branding.
-
-```typescript
-{
-  title: string;
-  template?: 'hatch-corporate' | 'hatch-executive' | 'hatch-technical';
-  data_sources?: string[];
-}
-```
-
-#### `add_slide` 
-Add slides with different layouts and content types.
-
-```typescript
-{
-  presentation_id: string;
-  slide_type: 'title' | 'content' | 'chart' | 'image' | 'two-cols';
-  content: {
-    title?: string;
-    subtitle?: string;
-    body?: string;
-    image_url?: string;
-    chart_type?: string;
-    data_query?: string;
-  };
-  styling?: {
-    layout?: string;
-    background?: string;
-    text_color?: string;
-  };
-}
-```
-
-#### `generate_chart`
-Create data visualizations with Hatch styling.
-
-```typescript
-{
-  chart_type: 'bar' | 'line' | 'pie' | 'scatter';
-  data_query: string;
-  styling?: {
-    title?: string;
-    colors?: string[];
-    size?: { width: number; height: number; };
-  };
-}
-```
-
-#### `apply_master_slide`
-Apply professional templates to presentations.
-
-```typescript
-{
-  presentation_id: string;
-  master_slide_id: 'corporate' | 'executive' | 'technical' | 'client' | 'minimal' | 'dashboard';
-  slide_data?: {
-    presentation_title?: string;
-    presentation_subtitle?: string;
-    date?: string;
-    project_code?: string;
-    client_logo_url?: string;
-  };
-}
-```
-
-### Asset & Integration Tools
-
-#### `fetch_assets`
-Get icons and images from configured APIs.
-
-```typescript
-{
-  type: 'icons' | 'images';
-  query: string;
-  count?: number;
-  style?: 'modern' | 'minimal' | 'corporate';
-  color?: string;
-}
-```
-
-#### `configure_api_service`
-Set up third-party integrations on-demand.
-
-```typescript
-{
-  service: 'freepik' | 'nounproject' | 'unsplash';
-  api_key: string;
-  temporary?: boolean;
-  additional_config?: object;
-}
-```
-
-#### `generate_ai_content`
-Create slide content using AI services.
-
-```typescript
-{
-  prompt: string;
-  content_type: 'title' | 'bullet_points' | 'paragraph' | 'summary';
-  tone?: 'professional' | 'casual' | 'technical' | 'executive';
-  length?: 'short' | 'medium' | 'long';
-  service?: 'openai' | 'anthropic';
-}
-```
-
-### Export & Preview Tools
-
-#### `export_presentation`
-Export to multiple formats.
-
-```typescript
-{
-  presentation_id: string;
-  format?: 'pdf' | 'html' | 'pptx';
-  options?: {
-    share_link?: boolean;
-    email?: string;
-  };
-}
-```
-
-#### `preview_presentation`
-Start development server for live preview.
-
-```typescript
-{
-  presentation_id: string;
-}
-```
-
-### Configuration Tools
-
-#### `get_brand_config`
-Retrieve Hatch brand guidelines and colors.
-
-#### `get_master_slides`
-List available templates and their features.
-
-#### `generate_master_slide_theme`
-Create custom CSS themes for presentations.
-
-#### `list_available_services`
-View configured and available API integrations.
-
-## ğŸ¨ Hatch Brand Integration
-
-### Color Palette
-- **Primary**: `#00A651` (Hatch Green)
-- **Secondary**: `#004225` (Dark Green)
-- **Accent**: `#FFB800` (Hatch Yellow)
-- **Background**: `#FFFFFF` (White)
-- **Text**: `#333333` (Dark Gray)
-
-### Typography
-- **Primary Font**: Inter (Sans-serif)
-- **Serif Font**: Georgia
-- **Monospace**: Fira Code
-
-### Template Features
-- Professional layouts optimized for business use
-- Consistent brand application across all slides
-- Responsive design for different screen sizes
-- Built-in animations and transitions
-- Corporate footer with logo and project details
-
-## ğŸ“Š Example Usage
-
-### Creating a Business Presentation
-
-```typescript
-// 1. Create presentation
-await createPresentation({
-  title: "Q4 Business Review",
-  template: "hatch-corporate"
-});
-
-// 2. Add executive summary
-await addSlide({
-  presentation_id: "abc123",
-  slide_type: "content",
-  content: {
-    title: "Executive Summary",
-    body: "- Revenue up 15% YoY\n- Cost optimization achieved\n- Market expansion successful"
-  }
-});
-
-// 3. Generate data chart
-await generateChart({
-  chart_type: "bar",
-  data_query: "SELECT quarter, revenue FROM financials WHERE year = 2024",
-  styling: {
-    title: "Quarterly Revenue Performance"
-  }
-});
-
-// 4. Export to PDF
-await exportPresentation({
-  presentation_id: "abc123",
-  format: "pdf",
-  options: { share_link: true }
-});
-```
-
-### AI-Powered Content Generation
-
-```typescript
-// Generate slide content with AI
-await generateAiContent({
-  prompt: "Create bullet points about renewable energy market trends",
-  content_type: "bullet_points",
-  tone: "professional",
-  length: "medium"
-});
-```
-
-### Dynamic Asset Integration
-
-```typescript
-// Fetch corporate icons
-await fetchAssets({
-  type: "icons",
-  query: "business strategy",
-  count: 5,
-  style: "corporate",
-  color: "primary"
-});
-```
-
-## ğŸ”§ Development
-
-### Prerequisites
-- Node.js 18+
-- TypeScript 5+
-- Slidev CLI
-
-### Local Setup
+### **Automatic Protection (No Setup Required)**
 ```bash
-# Clone repository
-<<<<<<< HEAD
-git clone https://github.com/hatch-ltd/slidev-builder-mcp.git
-=======
+# Every operation is automatically protected:
+"Create a presentation about AI strategy"
+# â†’ Auto-backup created, presentation built, success committed
+
+"Add a slide with financial projections" 
+# â†’ Pre-operation backup, slide created, changes saved
+
+"Apply the Hatch corporate theme"
+# â†’ Checkpoint created, theme applied, verified and committed
+```
+
+### **Smart Recovery** 
+```bash
+# If something goes wrong:
+"I think I lost some content, can you help?"
+# â†’ AI analyzes backups: "Found 3 versions with that content:
+#    1. 5 minutes ago (most recent)
+#    2. 30 minutes ago (before theme change)  
+#    3. 1 hour ago (complete version)"
+```
+
+## í¾¯ **Available Tools**
+
+### **Protected Creation Tools**
+- `create_deck_protected` - Create presentations with automatic protection
+- `create_slide` - Add slides with auto-backup
+- `apply_theme` - Apply themes with rollback capability
+- `generate_chart` - Create charts with version control
+
+### **Protection Management**
+- `backup_presentation` - Manual backup creation
+- `restore_presentation` - Emergency recovery from backups
+- `backup_status` - Check protection health
+- `enable_protection` - Activate protection for existing projects
+
+### **Component Library**
+- `create_component` - Build reusable presentation elements
+- `list_components` - Browse available components  
+- `add_component` - Insert components into slides
+- `publish_component` - Share components with team
+
+## í¾¨ **Professional Themes**
+
+- **Hatch Corporate**: Professional business presentations
+- **Hatch Executive**: C-level summary formats  
+- **Hatch Technical**: Developer and engineering content
+- **Hatch Client**: Customer-facing presentations
+
+## í³Š **Example Usage**
+
+### **Create Protected Presentation**
+```typescript
+await mcp.callTool('create_deck_protected', {
+  title: 'Q4 Strategic Review',
+  template: 'hatch-corporate',
+  outputPath: './presentations/q4-review',
+  protection: {
+    autoBackup: true,     // âœ… Automatic (default)
+    gitIntegration: true, // âœ… Automatic (default)  
+    fileWatching: true    // âœ… Automatic (default)
+  }
+});
+```
+
+### **Add Interactive Content**
+```typescript
+await mcp.callTool('create_slide', {
+  deckPath: './presentations/q4-review',
+  slideType: 'chart',
+  content: {
+    title: 'Revenue Growth',
+    chartType: 'line',
+    data: {
+      labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+      values: [100, 120, 140, 180]
+    }
+  }
+});
+// âœ… Auto-protected: backup â†’ create â†’ verify â†’ commit
+```
+
+## í´§ **Development**
+
+### **Local Setup**
+```bash
 git clone https://github.com/adolfosalasgomez3011/slidev-builder-mcp.git
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
 cd slidev-builder-mcp
-
-# Install dependencies
 npm install
-
-# Build project
 npm run build
-
-# Run in development mode
-npm run dev
-
-# Run tests
-npm test
+npm link
 ```
 
-### Project Structure
-```
-slidev-builder-mcp/
-â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ index.ts          # Main MCP server implementation
-â”‚   â”œâ”€â”€ bin.ts            # CLI entry point
-â”‚   â””â”€â”€ types.ts          # TypeScript definitions
-â”œâ”€â”€ templates/            # Slidev presentation templates
-â”‚   â”œâ”€â”€ hatch-corporate.md
-â”‚   â”œâ”€â”€ hatch-executive.md
-â”‚   â””â”€â”€ hatch-technical.md
-â”œâ”€â”€ themes/               # Custom Slidev themes
-â”‚   â””â”€â”€ hatch-corporate/
-â”‚       â”œâ”€â”€ package.json
-â”‚       â””â”€â”€ styles/
-â”œâ”€â”€ dist/                 # Compiled JavaScript
-â”œâ”€â”€ package.json
-â””â”€â”€ README.md
-```
-
-## ğŸš€ Deployment
-
-### NPM Publishing
+### **Testing Protection**
 ```bash
-npm run build
-npm publish
+# Test backup functionality
+npm run protection:backup
+
+# Test restore functionality  
+npm run protection:restore
+
+# Check protection status
+npm run protection:status
 ```
 
-### Docker Support
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY dist/ ./dist/
-EXPOSE 3000
-CMD ["npm", "start"]
-```
+## í¼ **Why Slidev Builder MCP v2?**
 
-## ğŸ¤ Contributing
+### **For Professionals**
+- âœ… **Zero Data Loss**: Never lose presentation work again
+- âœ… **Enterprise Quality**: Hatch consulting-grade templates
+- âœ… **Rapid Development**: Create presentations 10x faster
+- âœ… **Team Ready**: Built for collaboration and sharing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### **For Developers**
+- âœ… **MCP Standard**: Future-proof protocol compliance
+- âœ… **TypeScript**: Full type safety and IntelliSense
+- âœ… **Open Source**: MIT license for customization
+- âœ… **Extensible**: Plugin architecture for custom features
 
-### Development Guidelines
-- Follow TypeScript best practices
-- Add tests for new functionality
-- Update documentation for API changes
-- Maintain consistent code style with ESLint
-- Test with multiple MCP clients
-
-## ğŸ“„ License
+## í³„ **License**
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## ğŸ¢ About Hatch
+## í¿¢ **About Hatch**
 
-Hatch is a global engineering and consulting company that delivers innovative solutions for the mining, energy, and infrastructure sectors. This MCP server embodies our commitment to engineering excellence and digital transformation.
-
-**Engineering a better world** through innovative presentation technology.
+Built by [Hatch Ltd](https://hatch.com), a leading engineering and consulting firm with 70+ years of expertise in mining, energy, and infrastructure. Our AI-Native Advisory Practice brings cutting-edge technology to traditional industries.
 
 ---
 
-<<<<<<< HEAD
-For support, contact the Hatch Digital Innovation team or open an issue on GitHub.
-=======
-For support, contact the Hatch Digital Innovation team or open an issue on GitHub.
->>>>>>> 4b901da2b8e4bbb10dd10e20f9875a7c2344f872
+**í»¡ï¸ Your presentations are now bulletproof. Create with confidence!**
